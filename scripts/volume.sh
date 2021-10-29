@@ -1,1 +1,1 @@
-amixer get Master | awk '$0~/%/{print "Vol: " $4}' | tr -d '[]'
+awk -F"[][]" '/Left:/ { print "Vol: "$2 }' <(amixer sget Master)
