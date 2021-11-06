@@ -1,1 +1,1 @@
-awk -F"[][]" '/Left:/ { print "Vol: "$2 }' <(amixer sget Master)
+awk '/Mono:/ {print "Vol "$4}' <(amixer sget Master)
